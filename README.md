@@ -1,4 +1,4 @@
-# MumzPulse 🤖👶
+# MumzPulse 
 
 Milestone-Driven Shopping Assistant for Mumzworld – an AI-powered prototype that analyzes baby status updates and recommends relevant products from the Mumzworld catalog.
 
@@ -41,8 +41,8 @@ graph TB
     Engine --> Output[JSON Response<br/>Structured Schema]
     Output --> UI
     UI --> |Expert Tip| TTS[gTTS<br/>Text-to-Speech]
-    TTS --> Audio[🔊 Audio Playback<br/>Auto-detect Language]
-    UI --> Display[🖥️ UI States:<br/>- Success (Green)<br/>- Medical Alert (Red)<br/>- Warning (Yellow)]
+    TTS --> Audio[ Audio Playback<br/>Auto-detect Language]
+    UI --> Display[ UI States:<br/>- Success (Green)<br/>- Medical Alert (Red)<br/>- Warning (Yellow)]
 
     style User fill:#e1f5e1
     style Groq fill:#fff4e6,stroke:#ff9500
@@ -149,23 +149,23 @@ MumzPulse solves the real-world constraint of parents juggling babies and device
 3. Transcribed text auto-fills the input field (editable if needed)
 4. Parent taps **"Analyze"** → AI processes the spoken status update
 
-#### 🔊 Voice Output
+#### Voice Output
 - Expert tips converted to audio via **gTTS** with automatic language detection (Arabic RTL check)
 - Medical emergencies prioritized: audio warning overrides recommendations
-- **"🔊 Listen to Advice"** button plays audio directly in browser – no file downloads
+- **"Listen to Advice"** button plays audio directly in browser – no file downloads
 
-#### 🌐 Seamless Multilingual
+#### Seamless Multilingual
 - **Input:** Whisper auto-detects English vs Arabic during transcription
 - **Output:** gTTS selects `lang='ar'` or `lang='en'` based on Unicode RTL character detection
 - No language selector needed – works naturally for bilingual parents
 
-#### 📱 Technical Implementation
+####  Technical Implementation
 - Audio passed to Whisper as bytes via `client.audio.transcriptions.create()` (no temp files)
 - TTS output stored in `io.BytesIO` and Streamlit session state for instant playback
 - RTL detection: `any('\u0600' <= c <= '\u06FF' for c in text)` reliably distinguishes Arabic
 - 30-second audio briefing: AI's `expert_tip` mandated to be 4-6 sentences, gTTS processing with loading spinner for smooth UX
 
-#### 🎧 30-Second Audio Briefing Design
+####  30-Second Audio Briefing Design
 MumzPulse delivers **30+ second comprehensive audio briefings** – not one-word tips:
 
 **Structure (80-100 words, 3 parts):**
@@ -182,7 +182,7 @@ MumzPulse delivers **30+ second comprehensive audio briefings** – not one-word
 - **Word Count Enforcement:** System prompt mandates 80+ words; AI self-checks before JSON output
 
 **Busy Mom UX:**
-- Loading spinner shows "🎵 Generating 30-second audio briefing..." while gTTS processes
+- Loading spinner shows " Generating 30-second audio briefing..." while gTTS processes
 - Audio plays directly in browser – no downloads, no temp files
 - Medical emergencies override with priority warning in same language
 
@@ -235,7 +235,7 @@ Output shows a formatted table with Expectation vs. Reality comparison:
 ```
 Test Case               Detected Milestone  ... Status  Expert Tip (preview)
 ───────────────────────────────────────────────────────────────────────────────
-English - Crawling      crawling             ... ✅ PASS  For crawling stage...
+English - Crawling      crawling             ...  PASS  For crawling stage...
 ...
 ```
 
