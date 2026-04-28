@@ -1,3 +1,6 @@
+
+Loom Video link : https://www.loom.com/share/bcd4fb408cd24e4eac7222f1ade7f64a
+
 # MumzPulse 
 
 Milestone-Driven Shopping Assistant for Mumzworld – an AI-powered prototype that analyzes baby status updates and recommends relevant products from the Mumzworld catalog.
